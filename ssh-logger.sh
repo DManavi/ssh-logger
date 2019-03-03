@@ -22,7 +22,9 @@ DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 #echo "DIR is '$DIR'"
 DATE=$(date '+%Y-%m-%d');
 
-mkdir $DIR/logs;
+if [! -d $DIR/logs ]; then
+  mkdir $DIR/logs;
+fi
 
 LOG_FILE=$DIR/logs/$1-$DATE.log;
 
